@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/index.css";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-light m-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<img
+					src="https://www.nicelembrancinhas.com.br/image/cache/catalog/STAR%20WARS/LOGO%20STAR%20WARS%205CM-650x650.png"
+					className="logo" alt="logo-img" />
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
+					<button className="btn btn-primary">Favorites</button>
 				</Link>
 			</div>
 		</nav>

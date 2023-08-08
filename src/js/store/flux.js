@@ -1,9 +1,11 @@
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 
 	return {
 		store: {
-			
-			urlBase: "https://www.swapi.tech/api",
+
+			URLBASE: "https://www.swapi.tech/api",
 			people: [],
 			vehicles: [],
 			planets: [],
@@ -14,30 +16,55 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
+
+			getItems: () => {
 				const store = getStore();
+				const natures = ['people', 'planets', 'vehicles'];
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+				natures.forEach(async (nature) => {
+					const url = `${URLBASE}/${nature}`;
 
-				//reset the global store
-				setStore({ demo: demo });
+					try {
+						const response = await fetch(`${url}`)
+						const data = await response.jason()
+
+						data.result.forEach(async (item) => {
+							const responseTwo = await fetch(`${url}/${item.id}`)
+							const dataTwo = await responseTwo.json()
+
+							setStore({
+								[nature]: [...store[nature], dataTwo.result]
+							})
+						})
+
+					} catch (error) {
+						console.log(error)
+
+					}
+				})
+			},
+
+			addFavorite: (item) => {
+				const store = getStore();
+				const { favorites } = store
+
+				setStore({
+					favorites: [...favorites, item]
+				})
+			},
+
+			deleteFavorite: (item) => {
+				const store = getStore();
+				const { favorites } = store;
+				const unfavorite = favorites.filter(item => item.properties.name != element.properties.name);
+
+				setStore({
+					favorites: unfavorite
+				})
 			}
+
 		}
-	};
+	}
 };
 
 export default getState;

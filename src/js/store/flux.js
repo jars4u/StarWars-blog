@@ -1,19 +1,17 @@
 const getState = ({ getStore, getActions, setStore }) => {
+
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			
+			urlBase: "https://www.swapi.tech/api",
+			people: [],
+			vehicles: [],
+			planets: [],
+			favorites: [],
+
 		},
+
+
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

@@ -7,8 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			URLBASE: "https://www.swapi.tech/api",
 			people: [],
-			vehicles: [],
 			planets: [],
+			vehicles: [],
 			favorites: [],
 
 		},
@@ -22,14 +22,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const natures = ['people', 'planets', 'vehicles'];
 
 				natures.forEach(async (nature) => {
-					const url = `${URLBASE}/${nature}`;
+					const url = `${store.URLBASE}/${nature}`;
 
 					try {
 						const response = await fetch(`${url}`)
-						const data = await response.jason()
+						const data = await response.json()
 
-						data.result.forEach(async (item) => {
-							const responseTwo = await fetch(`${url}/${item.id}`)
+						data.results.forEach(async (item) => {
+							const responseTwo = await fetch(`${url}/${item.uid}`)
+							// console.log(responseTwo)
 							const dataTwo = await responseTwo.json()
 
 							setStore({

@@ -9,7 +9,7 @@ import { Link, useParams } from "react-router-dom";
 
 
 
-export const Card = (item, type) => {
+export const Card = ({ item, type }) => {
 
     const { actions } = useContext(Context)
     const { properties } = item
@@ -22,10 +22,10 @@ export const Card = (item, type) => {
             {
                 type == "person"
                 &&
-                <div className="card m-2">
+                <div className="card col-4 m-2">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/characters/${uid}.jpg`}
-                        className="card-img-top" alt="character-img" />
+                        className="card-img-top img w-100" alt="character-img" />
                     <div className="card-body">
                         <h3 className="card-title"><strong>{properties.name}</strong></h3>
                         <p className="card-text fs-5 p-0 m-0"><strong>Gender: </strong>{properties.gender}</p>
@@ -51,10 +51,10 @@ export const Card = (item, type) => {
             {
                 type == "planet"
                 &&
-                <div className="card m-2">
+                <div className="card col-4 m-2">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/planets/${uid}.jpg`}
-                        className="card-img-top" alt="planet-img" />
+                        className="card-img-top img w-100" alt="planet-img" />
                     <div className="card-body">
                         <h3 className="card-title"><strong>{properties.name}</strong></h3>
                         <p className="card-text fs-5 p-0 m-0"><strong>Population: </strong>{properties.population}</p>
@@ -79,10 +79,10 @@ export const Card = (item, type) => {
             {
                 type == "vehicle"
                 &&
-                <div className="card m-2">
+                <div className="card col-4 m-2">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/vehicles/${uid}.jpg`}
-                        className="card-img-top" alt="vehicle-img" />
+                        className="card-img-top img w-100" alt="vehicle-img" />
                     <div className="card-body">
                         <h3 className="card-title"><strong>{properties.name}</strong></h3>
                         <p className="card-text fs-5 p-0 m-0"><strong>Model: </strong>{properties.model}</p>

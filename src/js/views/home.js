@@ -9,7 +9,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container col-8">
+      <div className="container col-10">
 
         {/* TITULO */}
         <div className="text-center text-danger fs-1">
@@ -17,12 +17,12 @@ export const Home = () => {
         </div>
 
         {/* CONTAINER */}
-        <div className="d-flex justify-content-between overflow-auto">
+        <div className="d-flex justify-content-between overflow-auto mb-5">
 
           {/* CHARACTERS MAPPING*/}
           {
             people.map((item, index) => {
-              console.log(item);
+              // console.log(item);
 
               return (
 
@@ -40,15 +40,15 @@ export const Home = () => {
         </div>
 
         {/* CONTAINER */}
-        <div className="d-flex justify-content-between overflow-auto">
+        <div className="d-flex justify-content-between overflow-auto mb-5">
 
           {/* PLANETS MAPPING*/}
           {
             planets.map((item, index) => {
               return (
-
-                <Card key={index} item={item} type={"planet"} />
-
+                <div className="w-100">
+                  <Card key={index} item={item} type={"planet"} />
+                </div>
               )
             })
           }
@@ -61,7 +61,7 @@ export const Home = () => {
         </div>
 
         {/* CONTAINER */}
-        <div className="d-flex justify-content-between overflow-auto">
+        <div className="d-flex justify-content-between overflow-auto mb-5">
 
           {/* VEHICLES MAPPING*/}
           {

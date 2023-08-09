@@ -4,3 +4,16 @@
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+
+.img-planet {
+  width: 400px;
+  height: 400px;
+  /* aspect-ratio: 1/1;
+  object-fit: cover; */
+}
+
+.planetcard-size{
+  width: 400px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+}

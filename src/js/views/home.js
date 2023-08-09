@@ -22,7 +22,6 @@ export const Home = () => {
           {/* CHARACTERS MAPPING*/}
           {
             people.map((item, index) => {
-              // console.log(item);
 
               return (
 

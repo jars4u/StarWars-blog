@@ -3,7 +3,7 @@ import { Context } from '../store/appContext.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import "../../styles/home.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -14,7 +14,6 @@ export const Card = ({ item, type }) => {
     const { actions } = useContext(Context)
     const { properties } = item
     const { uid } = item
-    // const params = useParams()
 
 
     return (
@@ -29,8 +28,7 @@ export const Card = ({ item, type }) => {
                     <div className="card-body">
                         <h3 className="card-title"><strong>{properties.name}</strong></h3>
                         <p className="card-text fs-5 p-0 m-0"><strong>Gender: </strong>{properties.gender}</p>
-                        <p className="card-text fs-5 p-0 m-0"><strong>Hair color: </strong>{properties.hair_color}</p>
-                        <p className="card-text fs-5 p-0 m-0"><strong>Eye color: </strong>{properties.eye_color}</p>
+                        <p className="card-text fs-5 p-0 m-0"><strong>Birth year: </strong>{properties.birth_year}</p>
                     </div>
                     <div className="card-footer">
                         <div className="d-flex justify-content-between">

@@ -54,13 +54,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 			},
 
-			deleteFavorite: (item) => {
+			deleteFavorite: (element) => {
 				const store = getStore();
 				const { favorites } = store;
-				const unfavorite = favorites.filter(item => item.properties.name != element.properties.name);
+				const unFavorite = favorites.filter(item => item.properties.name != element.properties.name);
 
 				setStore({
-					favorites: unfavorite
+					favorites: unFavorite
 				})
 			}
 

@@ -5,7 +5,7 @@ export const Footer = () => (
 		<p>
 			Made with <i className="fa fa-heart text-danger" /> by{" "}
 			<a href="http://www.4geeksacademy.com">4Geeks Academy </a>
-			in collab with <a href="https://github.com/jars4u">JARS4U2 </a> Developer
+			in collab with <a href="https://github.com/jars4u">jars4u2 </a> Developer
 		</p>
 	</footer>
 );

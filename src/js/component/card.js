@@ -16,6 +16,15 @@ export const Card = ({ item, type }) => {
     const { uid } = item
 
 
+    // const searchFavorite = () => {
+    //     const isFavorite = favorites.some(fav => fav.food.id == dish.id);
+    //     setFavorite(isFavorite)
+    // }
+
+    // const icon = favorite ? <FontAwesomeIcon icon={faHeart} style={{ color: "#ff0000", }} size="xl" />
+    //     : <FontAwesomeIcon icon={faHeart} size="xl" />
+
+
     return (
         <>
             {
@@ -49,7 +58,7 @@ export const Card = ({ item, type }) => {
             {
                 type == "planet"
                 &&
-                <div className="planetcard-size col-4 m-2">
+                <div className="card col-4 m-2">
                     <img
                         src={`https://starwars-visualguide.com/assets/img/planets/${uid}.jpg`}
                         className="card-img-top img-planet" alt="planet-img" />

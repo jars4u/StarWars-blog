@@ -24,9 +24,9 @@ export const Home = () => {
             people.map((item, index) => {
 
               return (
-
-                <Card key={index} item={item} type={"person"} />
-
+                <div className="w-100" key={index}>
+                  <Card key={index} item={item} type={"person"} />
+                </div>
               )
             })
           }
@@ -45,7 +45,7 @@ export const Home = () => {
           {
             planets.map((item, index) => {
               return (
-                <div className="w-100">
+                <div className="w-100" key={index}>
                   <Card key={index} item={item} type={"planet"} />
                 </div>
               )
@@ -66,9 +66,9 @@ export const Home = () => {
           {
             vehicles.map((item, index) => {
               return (
-
-                <Card key={index} item={item} type={"vehicle"} />
-
+                <div className="w-100" key={index}>
+                  <Card key={index} item={item} type={"vehicle"} />
+                </div>
               )
             })
           }

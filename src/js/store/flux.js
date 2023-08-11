@@ -45,13 +45,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				})
 			},
 
-			addFavorite: (item) => {
+
+			addFavorite: (element) => {
 				const store = getStore();
 				const { favorites } = store
+				const isFavorited = favorites.filter(item => item.properties.name == element.properties.name);
+				console.log(favorites)
 
-				setStore({
-					favorites: [...favorites, item]
-				})
+				if (isFavorited.length == 0) {
+					setStore({
+						favorites: [...favorites, element]
+					})
+				} else {
+					console.log("ya existe")
+				}
 			},
 
 			deleteFavorite: (element) => {
